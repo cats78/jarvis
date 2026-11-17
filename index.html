@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f"><meta name="description" content="NAVO JARVIS browser-based voice and writing assistant">
+<title>NAVO JARVIS</title>
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="logo">J</div><div><b>NAVO JARVIS</b><small>PERSONAL WEB ASSISTANT</small></div></div><div class="head-actions"><span class="mode">WEB EDITION</span><button id="installBtn" class="outline" hidden>Install</button></div></header>
+<div class="layout">
+<aside class="sidebar"><div class="side-label">WORKSPACE</div><button class="nav active" data-view="assistant">◉ <span>Assistant</span></button><button class="nav" data-view="writer">✎ <span>Writing studio</span></button><button class="nav" data-view="commands">⌘ <span>Commands & help</span></button><div class="side-note"><b>Browser-only mode</b><p>JARVIS works inside this website. External Windows control is blocked by browser security.</p></div></aside>
+<main>
+<section id="assistant" class="view active">
+<div class="welcome"><div class="eyebrow">PERSONAL ASSISTANT · ONLINE WEB INTERFACE</div><h1>Hello, I'm <em>JARVIS.</em></h1><p id="greeting">Welcome back. How can I help you today?</p><div class="voice-actions"><button id="micBtn" class="primary round">🎙 <span>Start listening</span></button><button id="speakGreeting" class="outline">🔊 Hear greeting</button></div><div id="voiceStatus" class="status">VOICE READY WHEN SUPPORTED BY YOUR BROWSER</div></div>
+<div class="columns"><div class="panel"><div class="panel-head">CONVERSATION <span class="dot"></span></div><div id="chat" class="chat"><div class="bubble bot"><b>JARVIS</b><p>Hello! I can answer basic assistant commands, search the web, dictate text into your Writing Studio and read responses aloud.</p></div></div><form id="chatForm" class="entry"><input id="chatInput" placeholder="Ask JARVIS or say a command..." autocomplete="off"><button>Send</button></form></div>
+<div class="panel quick-panel"><div class="panel-head">QUICK ACTIONS</div><button class="quick" data-cmd="What time is it?">◷ <span>Tell me the time</span></button><button class="quick" data-cmd="What is today's date?">▦ <span>Today's date</span></button><button class="quick" data-cmd="Open Google">⌕ <span>Open Google</span></button><button class="quick" data-cmd="Open YouTube">▶ <span>Open YouTube</span></button><button class="quick" data-view="writer">✎ <span>Open writing studio</span></button></div></div>
+</section>
+<section id="writer" class="view">
+<div class="page-title"><div class="eyebrow">VOICE-POWERED DOCUMENT EDITOR</div><h1>Writing <em>Studio</em></h1><p>Dictate, edit, copy and save your writing from one place.</p></div>
+<div class="panel writer-panel"><div class="writer-toolbar"><input id="docTitle" value="My JARVIS document" aria-label="Document title"><div class="tools"><button id="dictateBtn" class="primary">🎙 Dictate</button><button id="readBtn" class="outline">🔊 Read aloud</button></div></div>
+<textarea id="editor" placeholder="Start typing here, or press Dictate and speak. Example: 'Dear Sir, I am writing this application...'"></textarea>
+<div class="writer-bottom"><span id="wordCount">0 words · 0 characters</span><div class="tools"><button id="cleanBtn" class="outline">Clean spacing</button><button id="copyBtn" class="outline">Copy text</button><button id="downloadBtn" class="primary">Download .txt</button></div></div>
+<div class="writer-help"><b>Voice editing commands:</b> say “new line”, “new paragraph”, “comma”, “full stop” or “question mark”. Dictation is inserted at your cursor.</div></div>
+<div class="panel templates"><div class="panel-head">START WITH A TEMPLATE</div><div class="template-row"><button data-template="letter">Formal letter</button><button data-template="application">Leave application</button><button data-template="email">Email</button><button data-template="news">News report</button></div></div>
+<div class="disclaimer">JARVIS can dictate and format text locally. Automatic AI-generated essays, advanced rewriting and grammar checking require an AI service connection, which is not configured in this offline-ready package.</div>
+</section>
+<section id="commands" class="view"><div class="page-title"><div class="eyebrow">HELP CENTER</div><h1>What can I <em>do?</em></h1><p>Commands supported by this browser edition.</p></div><div class="panel command-list">
+<h3>Assistant commands</h3><p>“What time is it?” · “What is today's date?” · “Open Google” · “Open YouTube” · “Search Google for [topic]” · “Search YouTube for [topic]” · “Help”</p>
+<h3>Writing studio</h3><p>Open Writing Studio, dictate into the editor, read your text aloud, clean extra spaces, copy it or download it as a text file.</p>
+<h3>Voice support</h3><p>Voice recognition depends on your browser and may use an online speech service. Keep the page open. Background always-on wake-word detection and offline speech recognition are not included.</p>
+<h3>Windows restrictions</h3><p>A normal website cannot launch or close Windows programs, control the mouse/keyboard in other apps, set system volume, or access arbitrary local files. Use the writing studio and Copy/Download actions instead.</p>
+</div></section>
+</main></div>
+<footer>NAVO JARVIS WEB · Microphone access requires browser permission · HTTPS recommended</footer>
+</div><script src="app.js"></script>
+</body></html>
